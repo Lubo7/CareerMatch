@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign In - CareerMatch</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/6.6.6/css/flag-icons.min.css"
+    />
+    <style>
+      /* Additional login page styles */
+      .login-container {
+        max-width: 400px;
+        margin: 60px auto;
+        padding: 30px;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .login-container h1 {
+        text-align: center;
+        margin-bottom: 25px;
+        color: #0072c6;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        color: #555;
+        font-weight: 500;
+      }
+
+      .form-group input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 1rem;
+      }
+
+      .form-group input:focus {
+        outline: none;
+        border-color: #0072c6;
+        box-shadow: 0 0 0 2px rgba(0, 114, 198, 0.2);
+      }
+
+      .form-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 15px;
+      }
+
+      .remember-me {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .forgot-password {
+        color: #0072c6;
+        font-size: 0.9rem;
+      }
+
+      .submit-button {
+        width: 100%;
+        padding: 12px;
+        background-color: #0072c6;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 1rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .submit-button:hover {
+        background-color: #005ea3;
+      }
+
+      .signup-link {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 0.9rem;
+        color: #666;
+      }
+
+      .signup-link a {
+        color: #0072c6;
+        font-weight: 500;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="container">
+        <div class="logo">
+          <a href="index.html">CareerMatch</a>
+        </div>
+        <div class="nav-right">
+          <div class="language-selector">
+            <select id="language">
+              <option value="en">
+                <span class="flag-icon flag-icon-us"></span> English
+              </option>
+              <option value="es">
+                <span class="flag-icon flag-icon-es"></span> Español
+              </option>
+              <option value="fr">
+                <span class="flag-icon flag-icon-fr"></span> Français
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="login-container">
+        <h1>Sign In</h1>
+        <form id="login-form">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required />
+          </div>
+
+          <div class="form-footer">
+            <div class="remember-me">
+              <input type="checkbox" id="remember" name="remember" />
+              <label for="remember">Remember me</label>
+            </div>
+            <a href="forgot-password.html" class="forgot-password"
+              >Forgot password?</a
+            >
+          </div>
+
+          <button type="submit" class="submit-button">Sign In</button>
+        </form>
+
+        <p class="signup-link">
+          Don't have an account? <a href="signup.html">Sign up</a>
+        </p>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-columns">
+          <div class="footer-column">
+            <h4>CareerMatch</h4>
+            <p>
+              Connect with experienced coaches who can guide your career journey
+            </p>
+          </div>
+
+          <div class="footer-column">
+            <h4>About Us</h4>
+            <ul>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="careers.html">Careers</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>Legal</h4>
+            <ul>
+              <li><a href="privacy.html">Privacy Policy</a></li>
+              <li><a href="terms.html">Terms of Service</a></li>
+              <li><a href="cookies.html">Cookie Policy</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="help.html">Help Center</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+              <li><a href="feedback.html">Feedback</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="copyright">
+          <p>&copy; 2025 CareerMatch. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Initialize language data attributes for login page
+        initializeLoginLanguageAttributes();
+
+        // Handle language selection
+        const languageSelector = document.getElementById("language");
+        if (languageSelector) {
+          languageSelector.addEventListener("change", function () {
+            changeLanguage(this.value);
+          });
+
+          // Apply stored language preference on page load
+          const savedLanguage = localStorage.getItem("preferredLanguage");
+          if (savedLanguage) {
+            languageSelector.value = savedLanguage;
+            changeLanguage(savedLanguage);
+          }
+        }
+
+        // Handle login form submission
+        document
+          .getElementById("login-form")
+          .addEventListener("submit", function (e) {
+            e.preventDefault();
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            // In a real application, this would send the credentials to a server
+            console.log("Login attempt:", { email, password });
+
+            // For demo purposes, simulate a successful login
+            alert("Login successful! Redirecting to dashboard...");
+            window.location.href = "index.html";
+          });
+      });
+
+      function initializeLoginLanguageAttributes() {
+        // Set data attributes for login page elements
+        document
+          .querySelector(".login-container h1")
+          .setAttribute("data-lang-key", "sign_in");
+        document
+          .querySelector('label[for="email"]')
+          .setAttribute("data-lang-key", "email");
+        document
+          .querySelector('label[for="password"]')
+          .setAttribute("data-lang-key", "password");
+        document
+          .querySelector('label[for="remember"]')
+          .setAttribute("data-lang-key", "remember_me");
+        document
+          .querySelector(".forgot-password")
+          .setAttribute("data-lang-key", "forgot_password");
+        document
+          .querySelector(".submit-button")
+          .setAttribute("data-lang-key", "sign_in_button");
+        document.querySelector(".signup-link").innerHTML =
+          '<span data-lang-key="no_account"></span> <a href="signup.html" data-lang-key="sign_up"></a>';
+      }
+    </script>
+  </body>
+</html>

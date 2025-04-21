@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CareerMatch</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/6.6.6/css/flag-icons.min.css"
+    />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="container">
+        <div class="logo">
+          <a href="index.html">CareerMatch</a>
+        </div>
+        <div class="nav-right">
+          <div class="language-selector">
+            <select id="language">
+              <option value="en">
+                <span class="flag-icon flag-icon-us"></span> English
+              </option>
+              <option value="es">
+                <span class="flag-icon flag-icon-es"></span> Español
+              </option>
+              <option value="fr">
+                <span class="flag-icon flag-icon-fr"></span> Français
+              </option>
+            </select>
+          </div>
+          <div class="auth-buttons">
+            <a href="login.html" class="sign-in">Sign In</a>
+            <a href="signup.html" class="get-started">Get Started</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="container">
+        <h1>Find Your Perfect Career Coach</h1>
+        <p>
+          Connect with experienced coaches who can guide your career journey
+        </p>
+        <div class="cta-buttons">
+          <a href="find-coach.html" class="cta-button primary">Find a Coach</a>
+          <a href="become-coach.html" class="cta-button secondary"
+            >Become a Coach</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <section class="coach-directory">
+      <div class="container">
+        <div class="filter-bar">
+          <select id="expertise-filter">
+            <option value="all">All Expertise</option>
+            <option value="career-transition">Career Transition</option>
+            <option value="resume-writing">Resume Writing</option>
+            <option value="interview-prep">Interview Prep</option>
+            <option value="tech-career">Tech Career</option>
+          </select>
+        </div>
+
+        <div class="coach-list">
+          <div class="coach-card">
+            <h3>Sarah Johnson</h3>
+            <div class="tags">
+              <span class="tag">careertransition</span>
+              <span class="tag">resumewriting</span>
+            </div>
+            <div class="details">
+              <p class="rate">Rate: $120/hour</p>
+              <p class="availability">Available: Mon-Fri</p>
+            </div>
+            <button class="book-session">Book Session</button>
+          </div>
+
+          <div class="coach-card">
+            <h3>Michael Chen</h3>
+            <div class="tags">
+              <span class="tag">techcareer</span>
+              <span class="tag">interviewprep</span>
+            </div>
+            <div class="details">
+              <p class="rate">Rate: $150/hour</p>
+              <p class="availability">Available: Weekends</p>
+            </div>
+            <button class="book-session">Book Session</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="footer-columns">
+          <div class="footer-column">
+            <h4>CareerMatch</h4>
+            <p>
+              Connect with experienced coaches who can guide your career journey
+            </p>
+          </div>
+
+          <div class="footer-column">
+            <h4>About Us</h4>
+            <ul>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="careers.html">Careers</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>Legal</h4>
+            <ul>
+              <li><a href="privacy.html">Privacy Policy</a></li>
+              <li><a href="terms.html">Terms of Service</a></li>
+              <li><a href="cookies.html">Cookie Policy</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="help.html">Help Center</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+              <li><a href="feedback.html">Feedback</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="copyright">
+          <p>&copy; 2025 CareerMatch. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
